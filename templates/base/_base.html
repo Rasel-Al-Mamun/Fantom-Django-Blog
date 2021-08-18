@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="{% block keywords %} {% endblock %}">
+  <meta name="description" content="{% block description %} {% endblock %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+
+  <title>Fantom | {% block title %} {% endblock %}</title>
+
+  {% include 'base/_css.html' %}
+
+  {% block extrahead %} {% endblock %}
+
+  {% block extrastyle %} {% endblock %}
+
+</head>
+
+<body>
+
+  {% block header %} {% endblock %}
+  
+  {% block content %} {% endblock %}
+  
+  {% block footer %} {% endblock %}
+
+  {% include 'base/_scripts.html' %}
+  
+  {% block extrascripts %} {% endblock %}
+
+</body>
+
+</html>

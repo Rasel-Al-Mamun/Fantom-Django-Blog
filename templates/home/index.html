@@ -1,0 +1,27 @@
+{% extends 'base/_base.html' %}
+
+{% load static %}
+
+{% block keywords %} {% endblock %}
+
+{% block description %} {% endblock %}
+
+{% block title %} Home {% endblock %}
+
+{% block extrahead %} {% endblock %}
+
+{% block extrastyle %} {% endblock %}
+
+{% block header %} {% include 'partials/_header.html' %} {% endblock %}
+
+{% block content %}
+
+{% include 'home/content/_slider.html' %}
+
+{% include 'home/content/_blog.html' %}
+
+{% endblock %}
+
+{% block footer %} {% include 'partials/_footer.html' %} {% endblock %}
+
+{% block extrascripts %} {% endblock %}
