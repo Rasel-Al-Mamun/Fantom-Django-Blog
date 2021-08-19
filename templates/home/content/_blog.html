@@ -6,86 +6,38 @@
 
       <div class="col-lg-8">
         <div class="blog_left_sidebar">
+
+          {% if posts %}
+
+          {% for post in posts %}
           <article class="blog_style1">
             <div class="blog_img">
-              <img class="img-fluid" src="{% static 'img/home-blog/blog-1.jpg' %}" alt="">
+              <img class="img-fluid" width="100%" src="{{ post.imageURL }}" alt="{{ blog.title }}">
             </div>
             <div class="blog_text">
               <div class="blog_text_inner">
-                <a class="cat" href="#">Gadgets</a>
-                <a href="#">
-                  <h4>Nest Protect: 2nd Gen Smoke CO Alarm</h4>
+                <a class="cat" href="">
+                  {{ post.category.name }}
                 </a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                <a href="">
+                  <h4>{{ post.title }}</h4>
+                </a>
+                <p>{{ post.overview }}</p>
                 <div class="date">
-                  <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-                  <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+                  <a href="">
+                    <i class="fa fa-calendar" aria-hidden="true"></i> 
+                    {{ post.publish_date }}
+                  </a>
+                  <a href="">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i> 
+                    {{ post.countreview.count }}
+                  </a>
                 </div>
               </div>
             </div>
           </article>
-          <article class="blog_style1">
-            <div class="blog_img">
-              <img class="img-fluid" src="{% static 'img/home-blog/blog-2.jpg' %}" alt="">
-            </div>
-            <div class="blog_text">
-              <div class="blog_text_inner">
-                <a class="cat" href="#">Gadgets</a>
-                <a href="#">
-                  <h4>Nest Protect: 2nd Gen Smoke CO Alarm</h4>
-                </a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                <div class="date">
-                  <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-                  <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="blog_style1">
-            <div class="blog_img">
-              <img class="img-fluid" src="{% static 'img/home-blog/blog-3.jpg' %}" alt="">
-            </div>
-            <div class="blog_text">
-              <div class="blog_text_inner">
-                <a class="cat" href="#">Gadgets</a>
-                <a href="#">
-                  <h4>Nest Protect: 2nd Gen Smoke CO Alarm</h4>
-                </a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                <div class="date">
-                  <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-                  <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="blog_style1">
-            <div class="blog_img">
-              <img class="img-fluid" src="{% static 'img/home-blog/blog-4.jpg' %}" alt="">
-            </div>
-            <div class="blog_text">
-              <div class="blog_text_inner">
-                <a class="cat" href="#">Gadgets</a>
-                <a href="#">
-                  <h4>Nest Protect: 2nd Gen Smoke CO Alarm</h4>
-                </a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                <div class="date">
-                  <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-                  <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
-                </div>
-              </div>
-            </div>
-          </article>
+          {% endfor %}
+
           <nav class="blog-pagination justify-content-center d-flex">
             <ul class="pagination">
               <li class="page-item">
@@ -109,6 +61,10 @@
               </li>
             </ul>
           </nav>
+
+          {% else %}
+          <h4>There are no post found</h4>
+          {% endif %}
         </div>
       </div>
 
